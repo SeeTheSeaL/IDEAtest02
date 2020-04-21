@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+    <!--    将指定类配置给Spring，让Spring创建对象的实例-->
+    <bean id="userDao" class="com.spring.UserDaoImpl"/>
+    <!--    设置一个id为userService的实例-->
+    <bean id="userService" class="com.spring.UserServiceImpl">
+        <!--        将id为userDao的的bean注入到userService的实例中-->
+        <property name="userDao" ref="userDao">
+        </property>
+    </bean>
+</beans>
+
+
+        <!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+        <!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+        <!--        http://www.springframework.org/schema/beans/spring-beans.xsd">-->
+        <!--    将指定类配置给Spring，让Spring创建对象的实例-->
+        <!--    <bean id="userDao" class="com/UserDaoImpl.java"></bean>-->
+        <!--</beans>-->
